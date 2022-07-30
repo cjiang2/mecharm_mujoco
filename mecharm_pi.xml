@@ -1,0 +1,48 @@
+<mujoco model="mecharm_pi">
+  <compiler angle="radian" meshdir="meshes/"/>
+  <size njmax="500" nconmax="100"/>
+  <default/>
+  <asset>
+    <mesh name="base" file="base.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link1" file="link1.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link2" file="link2.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link3" file="link3.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link4" file="link4.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link5" file="link5.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="link6" file="link6.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+  <worldbody>
+    <geom quat="2.67949e-08 0 0 -1" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="base"/>
+    <geom quat="2.67949e-08 0 0 -1" type="mesh" mesh="base"/>
+    <body name="link1" pos="0 0 0.1">
+      <joint name="joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.79253 2.79253"/>
+      <geom pos="0 0 -0.132" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link1"/>
+      <geom pos="0 0 -0.132" type="mesh" mesh="link1"/>
+      <body name="link2" pos="0 0 0.038" quat="0.707105 0.707108 0 0">
+        <joint name="joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708"/>
+        <geom pos="-0.005 -0.21 -0.002" quat="1.89468e-08 1.89469e-08 0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link2"/>
+        <geom pos="-0.005 -0.21 -0.002" quat="1.89468e-08 1.89469e-08 0.707108 0.707105" type="mesh" mesh="link2"/>
+        <body name="link3" pos="0 0.1 0" quat="2.67949e-08 1 0 0">
+          <joint name="joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-3.08 0.785398"/>
+          <geom pos="-0.09 0.306 0.005" quat="1.89468e-08 1.89469e-08 0.707105 -0.707108" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link3"/>
+          <geom pos="-0.09 0.306 0.005" quat="1.89468e-08 1.89469e-08 0.707105 -0.707108" type="mesh" mesh="link3"/>
+          <body name="link4" pos="0.108 -0.005 -0.001" quat="0.707105 0 0.707108 0">
+            <joint name="joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-2.79253 2.79253"/>
+            <geom pos="0.009 -0.311 -0.228" quat="0.499998 -0.500002 0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link4"/>
+            <geom pos="0.009 -0.311 -0.228" quat="0.499998 -0.500002 0.5 0.5" type="mesh" mesh="link4"/>
+            <body name="link5" pos="-0.001 0 0" quat="1.89468e-08 0.707108 -1.89469e-08 0.707105">
+              <joint name="joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-1.74533 1.74533"/>
+              <geom pos="-0.292 -0.318 -0.009" quat="1.89468e-08 1.89469e-08 0.707108 0.707105" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link5"/>
+              <geom pos="-0.292 -0.318 -0.009" quat="1.89468e-08 1.89469e-08 0.707108 0.707105" type="mesh" mesh="link5"/>
+              <body name="link6" pos="0.06 0 0" quat="0.707105 0 0.707108 0">
+                <joint name="joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14 3.14"/>
+                <geom pos="-0.1625 0.0536 -0.211" quat="0.707105 0 0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="link6"/>
+                <geom pos="-0.1625 0.0536 -0.211" quat="0.707105 0 0.707108 0" type="mesh" mesh="link6"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
